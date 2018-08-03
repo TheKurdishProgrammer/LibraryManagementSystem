@@ -1,0 +1,28 @@
+﻿@model LibraryMangement.Data.Models.Auther
+<div  style="padding: 8px" class="row orderForm">
+    
+    <form asp-controller="Author" asp-action="Edit" method="post" class="form-horizontal" role="form">
+        <h3 class="col-md-offset-2">Edit Customer : @Model.AutherName</h3>
+        @Html.HiddenFor((m=>Model.AutherId))
+        <div class="form-group">
+            
+            <label asp-for="AutherName" class="col-md-2 control-label"></label>
+            <div class="col-md-6">
+               
+                <input asp-for="AutherName" class="form-group" placeholder="Enter Customer Name"/><br/>
+                <span asp-validation-for="AutherName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            
+            <div class="btn-group col-md-offset-2 col-md-6">
+               
+                <input class="btn btn-default" type="submit" value="Return" asp-controller="Author" asp-action="Index" />
+                <input class="btn btn-success" type="submit" value="Update"/>
+            </div>
+        </div>
+        
+    </form>
+    
+
+</div>

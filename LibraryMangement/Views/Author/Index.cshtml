@@ -1,0 +1,62 @@
+﻿@using LibraryMangement.Data.Models
+@model IEnumerable<LibraryMangement.Data.Models.Auther>
+
+<a class="btn btn-success mt-5" style="margin: 10px" asp-controller="Author" asp-action="Create">Create</a>
+
+<table class="table table-striped table-hover">
+    
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Books Wrote</th>
+        <th>Show Books</th>
+        <th>Edit Author</th>
+        <th>Delete Author</th>
+    </tr>
+    </thead>
+    
+    <tbody>
+    @foreach (var author in Model)
+    {
+        <tr>
+            <td>@author.AutherId</td>
+            <td>@author.AutherName</td>
+            <td>@author.Books?.Count</td>
+            @if (author.Books?.Count == 0)
+            {
+         
+                <td><a class="btn btn-default" asp-area="">No Books</a></td>
+                
+            }
+            else
+            {
+                 
+                <td><a class="btn btn-info" asp-area="" asp-controller="Book" asp-action="AuthorBooks" asp-route-id="@author.AutherId">Show Books</a></td>
+            }
+            
+            <td><a class="btn btn-info" asp-area="" asp-controller="Author" asp-action="Edit" asp-route-id="@author.AutherId">Edit</a></td>
+            <td><a class="btn btn-danger" asp-area="" asp-controller="Author" asp-action="Delete" asp-route-id="@author.AutherId">Delete</a></td>
+        </tr>
+    }
+    </tbody>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+﻿@model LibraryMangement.ViewModels.AuthorCreateViewModel
+<div class="row orderForm">
+
+    <form asp-controller="Author" asp-action="Create" method="post" class="form-horizontal" role="form">
+        <h3 class="col-md-offset-2">Create New Customer</h3>
+        @Html.HiddenFor(x => x.Refere)
+        <div class="form-group">
+
+            <label asp-for="Auther.AutherName" class="col-md-2 control-label"></label>
+
+            <div class="col-md-6">
+                <input asp-for="Auther.AutherName" class="form-control" placeholder="Enter Customer Name"/><br/>
+                <span asp-validation-for="Auther.AutherName" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div class="form-group">
+
+            <div class="btn-group col-md-offset-2 col-md-6">
+
+                
+                @if (Model.From != 0)
+                {
+                    <input class="btn btn-default" type="submit" value="Return" asp-controller="Book" asp-action="Create"/>
+                }
+                else
+                {
+                    <input class="btn btn-default" type="submit" value="Return" asp-controller="Author" asp-action="Index"/>
+                }
+                <input class="btn btn-success" type="submit" value="Create"/>
+            </div>
+        </div>
+
+    </form>
+
+
+</div>

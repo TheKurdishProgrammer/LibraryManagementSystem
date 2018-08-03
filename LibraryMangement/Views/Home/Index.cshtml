@@ -1,0 +1,26 @@
+﻿@model LibraryMangement.ViewModels.HomeViewModel
+@{
+    var AvailableBook = Model.BookCount - Model.LendBookCount;
+}
+<h2>Sky LibrayManagement DashBoard</h2>
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Customers Information</div>
+            <div class="panel-body">There Are Currently @Model.CustomerCount Registered Customers</div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Books Information</div>
+            <div class="panel-body">There is @AvailableBook  Book out of @Model.BookCount in The Library</div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Authors Information</div>
+            <div class="panel-body">There are @Model.AutherCount Authors For the Books</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<LibraryMangement.ViewModels.CustomerViewModel>
+<a class="btn btn-success mt-5" style="margin: 10px" asp-controller="Customer" asp-action="Create">Create</a>
+<table class="table table-striped table-hover">
+    
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Borrowed Books Count</th>
+        <th>Show Borrowed Books</th>
+        <th>Edit Customer</th>
+        <th>Delete Customer</th>
+    </tr>
+    </thead>
+    
+    <tbody>
+    @foreach (var customerVm in Model)
+    {
+        <tr>
+            <td>@customerVm.Customer.CustomerId</td>
+            <td>@customerVm.Customer.CustomerName</td>
+            <td>@customerVm.BookCount</td>
+            @if (customerVm.BookCount == 0)
+            {
+                <td><a class="btn btn-default" asp-area="">Show</a></td>
+            }
+            else
+            {
+                <td><a class="btn btn-info" asp-area="" asp-controller="Book" asp-action="BorrowedBooks" asp-route-customerId="@customerVm.Customer.CustomerId">Show Books</a></td>
+            }
+            
+            <td><a class="btn btn-info" asp-area="" asp-controller="Customer" asp-action="Edit" asp-route-id="@customerVm.Customer.CustomerId">Edit</a></td>
+            <td><a class="btn btn-danger" asp-area="" asp-controller="Customer" asp-action="Delete" asp-route-id="@customerVm.Customer.CustomerId">Delete</a></td>
+        </tr>
+    }
+    </tbody>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
