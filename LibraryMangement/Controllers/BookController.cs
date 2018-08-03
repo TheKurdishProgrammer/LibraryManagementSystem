@@ -24,7 +24,7 @@ namespace LibraryMangement.Controllers
         {
             var books = _bookRepository.GetAllBooksWithAuthor();
 
-            return View(books);
+            return books.Any()?View(books):View("Empty");
         }
 
 
