@@ -12,6 +12,7 @@ namespace LibraryMangement.Controllers
     public class AuthorController : Controller
     {
 
+
         public  const int REFERE_BOOK = 1;
         public  const int REFERE_AUTHOR = 2;
         private readonly IAuthorRepository _authorRepository;
