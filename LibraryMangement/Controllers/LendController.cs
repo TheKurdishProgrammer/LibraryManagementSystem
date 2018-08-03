@@ -1,6 +1,7 @@
 ﻿using LibraryMangement.Data.Repository.Interfaces;
 using LibraryMangement.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace LibraryMangement.Controllers
 {
@@ -20,7 +21,8 @@ namespace LibraryMangement.Controllers
         {
 
             var bookWithNoBorrowr = _bookRepository.GetAllBooksWithAuthor(book=>book.BorrowerId == 0);
-            return View(bookWithNoBorrowr);
+
+            return bookWithNoBorrowr.Any()?View(bookWithNoBorrowr):View("Empty");
         }
 
         public IActionResult LendBook(int id)

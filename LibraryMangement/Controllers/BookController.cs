@@ -93,9 +93,8 @@ namespace LibraryMangement.Controllers
             var book = _bookRepository.FindById(id);
             _bookRepository.Delete(book);
 
-            return View("Index");
+            return RedirectToAction("Index");
         }
-
 
         public IActionResult Create()
         {

@@ -21,7 +21,7 @@
             <td>@book.BookName</td>
             <td>@book.Auther.AutherName</td>
             <td><a class="btn btn-info" asp-area="" asp-controller="Book" asp-action="Edit" asp-route-id="@book.BookId">Edit</a></td>
-            <td><a class="btn btn-danger" asp-area="" asp-controller="Customer" asp-action="Delete" asp-route-id="@book.BookId">Delete</a></td>
+            <td><a class="btn btn-danger" asp-area="" asp-controller="Book" asp-action="Delete" asp-route-id="@book.BookId">Delete</a></td>
         </tr>
     }
     </tbody>
