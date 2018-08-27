@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace LibraryMangement.Data.Models
 {
@@ -12,8 +13,8 @@ namespace LibraryMangement.Data.Models
         public Auther Auther { get; set; }
         public int AutherId { get; set; }
 
-
-        public int BorrowerId { get; set; }
-        public Customer Borrower { get; set; }
+        
+        public int? BorrowerId { get; set; }
+        public virtual Customer Borrower { get; set; }
     }
 }

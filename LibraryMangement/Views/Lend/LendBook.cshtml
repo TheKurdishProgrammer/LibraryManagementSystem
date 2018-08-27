@@ -3,7 +3,7 @@
 
     <form asp-controller="Lend" asp-action="LendBook" method="post" class="form-horizontal" role="form">
 
-        <h3 class="col-md-offset-2"> Create New Book</h3>
+        <h3 class="col-md-offset-2"> Lending @Model.Book.BookName</h3>
 
         <div class="form-group">
             @Html.HiddenFor(lendVm => Model.Book.BookId)

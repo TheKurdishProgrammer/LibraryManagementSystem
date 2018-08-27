@@ -61,7 +61,7 @@ namespace LibraryMangement.Controllers
 
         public IActionResult Edit(int id)
         {
-            Book book = _bookRepository.GetAllBooksWithAuthor(a => a.BookId == id).FirstOrDefault();
+            var book = _bookRepository.GetAllBooksWithAuthor(a => a.BookId == id).FirstOrDefault();
 
             if (book == null)
             {

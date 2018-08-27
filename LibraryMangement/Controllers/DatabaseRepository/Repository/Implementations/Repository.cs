@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LibraryMangement.Controllers.DatabaseRepository;
 using LibraryMangement.Data.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -67,4 +68,6 @@ namespace LibraryMangement.Data.Repository
             return dbContext.Set<T>().Where(countPredicat).Count();
         }
     }
+
+   
 }

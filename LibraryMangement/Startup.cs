@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LibraryMangement.Controllers.DatabaseRepository;
 using LibraryMangement.Data;
 using LibraryMangement.Data.Repository;
 using LibraryMangement.Data.Repository.Implementations;
@@ -40,12 +41,15 @@ namespace LibraryMangement
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<IdentityDbContext>(options => options.UseInMemoryDatabase("LibraryManagement"));
-            services.AddDbContext<LibraryDbContext>(options => options.UseInMemoryDatabase("LibraryContext"));
+//            services.AddDbContext<IdentityDbContext>(options => options.UseInMemoryDatabase("LibraryManagement"));
+//            services.AddDbContext<LibraryDbContext>(options => options.UseInMemoryDatabase("LibraryContext"));
 
 
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<IdentityDbContext>();
 
+            
+            const string connectionString = @"Server=(localdb)\mssqllocaldb;Database=MyDatabase;Trusted_Connection=True;";
+            services.AddDbContext<LibraryDbContext>(options=>options.UseSqlServer(connectionString));
 
 
             
@@ -81,7 +85,6 @@ namespace LibraryMangement
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            DbInitializer.Seed(app).Wait();
         }
        
     }

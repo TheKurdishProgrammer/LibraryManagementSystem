@@ -1,4 +1,5 @@
-﻿using LibraryMangement.Data.Models;
+﻿using LibraryMangement.Controllers.DatabaseRepository;
+using LibraryMangement.Data.Models;
 using LibraryMangement.Data.Repository.Interfaces;
 
 namespace LibraryMangement.Data.Repository.Implementations

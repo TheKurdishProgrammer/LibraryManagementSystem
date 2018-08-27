@@ -10,7 +10,5 @@ namespace LibraryMangement.Data
         {
             
         }
-    }
-    
-    
+    } 
 }

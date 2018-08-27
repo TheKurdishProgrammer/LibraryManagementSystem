@@ -20,7 +20,7 @@ namespace LibraryMangement.Controllers
         public IActionResult Index()
         {
 
-            var bookWithNoBorrowr = _bookRepository.GetAllBooksWithAuthor(book=>book.BorrowerId == 0);
+            var bookWithNoBorrowr = _bookRepository.GetAllBooksWithAuthor(book=>book.BorrowerId == null);
 
             return bookWithNoBorrowr.Any()?View(bookWithNoBorrowr):View("Empty");
         }

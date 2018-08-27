@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using LibraryMangement.Data.Models;
+﻿using LibraryMangement.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace LibraryMangement.Data
+namespace LibraryMangement.Controllers.DatabaseRepository
 {
     public class LibraryDbContext : DbContext
     {
